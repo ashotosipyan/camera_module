@@ -12,30 +12,42 @@ class CameraModule: NSObject {
          return true
      }
   
-  @objc func openCamera(_ callback: @escaping RCTResponseSenderBlock) {
-      guard let rootViewController = UIApplication.shared.delegate?.window??.rootViewController else {
-        callback(["E_ACTIVITY_DOES_NOT_EXIST"])
-        return
-      }
-
-      AVCaptureDevice.requestAccess(for: .video) { [weak self] success in
-        if success {
-          self?.imageCallback = callback
-          DispatchQueue.main.async {
-            self?.presentCamera(rootViewController: rootViewController)
-          }
-        } else {
-          callback(["E_CAMERA_PERMISSION_DENIED"])
-        }
-      }
-    }
   
   private func presentCamera(rootViewController: UIViewController) {
       let imagePicker = UIImagePickerController()
       imagePicker.sourceType = .camera
       imagePicker.delegate = self
       rootViewController.present(imagePicker, animated: true, completion: nil)
+  }
+  
+  var isAuthorized: Bool {
+      get async {
+          let status = AVCaptureDevice.authorizationStatus(for: .video)
+          
+          // Determine if the user previously authorized camera access.
+          var isAuthorized = status == .authorized
+          
+          // If the system hasn't determined the user's authorization status,
+          // explicitly prompt them for approval.
+          if status == .notDetermined {
+              isAuthorized = await AVCaptureDevice.requestAccess(for: .video)
+          }
+          
+          return isAuthorized
+      }
+  }
+  
+  func setUpCaptureSession() async {
+      guard await isAuthorized else { return }
+      // Set up the capture session.
+  }
+  
+  @objc func openCamera() {
+    Task {
+      await setUpCaptureSession()
     }
+  }
+  
 }
 
 extension CameraModule: UIImagePickerControllerDelegate, UINavigationControllerDelegate {

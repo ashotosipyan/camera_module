@@ -3,6 +3,6 @@
 
 @interface RCT_EXTERN_MODULE(CameraModule, NSObject)
 
-RCT_EXTERN_METHOD(openCamera:(NSString *)callback)
+RCT_EXTERN_METHOD(openCamera)
 
 @end

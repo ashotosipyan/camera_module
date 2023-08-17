@@ -5,9 +5,7 @@ import CameraModuleWrapper from './CameraModule';
 function App() {
   const handleTakePhoto = async () => {
     try {
-      const imageUri = await CameraModuleWrapper.openCamera(() => {
-        console.log('hey');
-      });
+      const imageUri = await CameraModuleWrapper.openCamera();
       console.log('Image URI:', imageUri);
     } catch (error) {
       console.log('Error:', error);
@@ -15,7 +13,7 @@ function App() {
   };
   return (
     // eslint-disable-next-line react-native/no-inline-styles
-    <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
+    <View style={{flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: 'white'}}>
       <Pressable onPress={handleTakePhoto}>
         <Text>Take Photo</Text>
       </Pressable>
