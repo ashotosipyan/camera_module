@@ -5,6 +5,7 @@ import React
 
 @objc(CameraModule)
 class CameraModule: NSObject {
+  let captureSession = AVCaptureSession()
   private var imageCallback: RCTResponseSenderBlock?
   
   @objc
@@ -39,7 +40,15 @@ class CameraModule: NSObject {
   
   func setUpCaptureSession() async {
       guard await isAuthorized else { return }
-      // Set up the capture session.
+      
+      captureSession.beginConfiguration()
+      let videoDevice = AVCaptureDevice.default(.builtInDualCamera,
+                                                for: .video, position: .back)
+      guard
+          let videoDeviceInput = try? AVCaptureDeviceInput(device: videoDevice!),
+          captureSession.canAddInput(videoDeviceInput)
+          else { return }
+      captureSession.addInput(videoDeviceInput)
   }
   
   @objc func openCamera() {
