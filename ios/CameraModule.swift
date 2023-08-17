@@ -38,8 +38,11 @@ class CameraModule: NSObject {
       }
   }
   
-  func setUpCaptureSession() async {
-      guard await isAuthorized else { return }
+  func setUpCaptureSession(resolve: @escaping RCTPromiseResolveBlock, rejecter reject: @escaping RCTPromiseRejectBlock) async {
+      guard await isAuthorized else {
+        reject("AUTH_ERROR", "User not authorized to use camera", nil)
+        return
+      }
       
       captureSession.beginConfiguration()
       let videoDevice = AVCaptureDevice.default(.builtInDualCamera,
@@ -47,13 +50,19 @@ class CameraModule: NSObject {
       guard
           let videoDeviceInput = try? AVCaptureDeviceInput(device: videoDevice!),
           captureSession.canAddInput(videoDeviceInput)
-          else { return }
+          else {
+            reject("CAMERA_SETUP_ERROR", "Unable to configure capture session", nil)
+            return
+          }
+    
       captureSession.addInput(videoDeviceInput)
+    
+      resolve(nil)
   }
   
-  @objc func openCamera() {
+  @objc func openCamera(_ resolve: @escaping RCTPromiseResolveBlock, rejecter reject:@escaping RCTPromiseRejectBlock) {
     Task {
-      await setUpCaptureSession()
+      await setUpCaptureSession(resolve: resolve, rejecter: reject)
     }
   }
   
