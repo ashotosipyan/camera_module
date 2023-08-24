@@ -14,6 +14,11 @@
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		7699B88040F8A987B510C191 /* libPods-SwiftNativeModule-SwiftNativeModuleTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-SwiftNativeModule-SwiftNativeModuleTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		96EE0EB02A97AC680054E4F1 /* CameraViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EE0EAF2A97AC680054E4F1 /* CameraViewManager.swift */; };
+		96EE0EB22A97AD470054E4F1 /* CameraViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 96EE0EB12A97AD470054E4F1 /* CameraViewManager.m */; };
+		96EE0EB42A97AD820054E4F1 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EE0EB32A97AD820054E4F1 /* CameraView.swift */; };
+		96EE0EBA2A97AEE90054E4F1 /* Promise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EE0EB92A97AEE90054E4F1 /* Promise.swift */; };
+		96EE0EBC2A97AF580054E4F1 /* CameraError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EE0EBB2A97AF580054E4F1 /* CameraError.swift */; };
 		D22D074E2A72AB85001578BA /* CameraModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22D074D2A72AB85001578BA /* CameraModule.swift */; };
 		D22D07522A72C115001578BA /* CameraModuleBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = D22D07512A72C115001578BA /* CameraModuleBridge.m */; };
 /* End PBXBuildFile section */
@@ -45,6 +50,11 @@
 		5DCACB8F33CDC322A6C60F78 /* libPods-SwiftNativeModule.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SwiftNativeModule.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = SwiftNativeModule/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-SwiftNativeModule-SwiftNativeModuleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftNativeModule-SwiftNativeModuleTests.release.xcconfig"; path = "Target Support Files/Pods-SwiftNativeModule-SwiftNativeModuleTests/Pods-SwiftNativeModule-SwiftNativeModuleTests.release.xcconfig"; sourceTree = "<group>"; };
+		96EE0EAF2A97AC680054E4F1 /* CameraViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewManager.swift; sourceTree = "<group>"; };
+		96EE0EB12A97AD470054E4F1 /* CameraViewManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CameraViewManager.m; sourceTree = "<group>"; };
+		96EE0EB32A97AD820054E4F1 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
+		96EE0EB92A97AEE90054E4F1 /* Promise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Promise.swift; sourceTree = "<group>"; };
+		96EE0EBB2A97AF580054E4F1 /* CameraError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraError.swift; sourceTree = "<group>"; };
 		D22D074C2A72AB85001578BA /* SwiftNativeModule-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SwiftNativeModule-Bridging-Header.h"; sourceTree = "<group>"; };
 		D22D074D2A72AB85001578BA /* CameraModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraModule.swift; sourceTree = "<group>"; };
 		D22D07512A72C115001578BA /* CameraModuleBridge.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CameraModuleBridge.m; sourceTree = "<group>"; };
@@ -121,8 +131,13 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				96EE0EBB2A97AF580054E4F1 /* CameraError.swift */,
+				96EE0EB32A97AD820054E4F1 /* CameraView.swift */,
+				96EE0EB12A97AD470054E4F1 /* CameraViewManager.m */,
+				96EE0EAF2A97AC680054E4F1 /* CameraViewManager.swift */,
 				D22D074D2A72AB85001578BA /* CameraModule.swift */,
 				D22D07512A72C115001578BA /* CameraModuleBridge.m */,
+				96EE0EB82A97AED40054E4F1 /* React Utils */,
 				13B07FAE1A68108700A75B9A /* SwiftNativeModule */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* SwiftNativeModuleTests */,
@@ -143,6 +158,14 @@
 				00E356EE1AD99517003FC87E /* SwiftNativeModuleTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		96EE0EB82A97AED40054E4F1 /* React Utils */ = {
+			isa = PBXGroup;
+			children = (
+				96EE0EB92A97AEE90054E4F1 /* Promise.swift */,
+			);
+			path = "React Utils";
 			sourceTree = "<group>";
 		};
 		BBD78D7AC51CEA395F1C20DB /* Pods */ = {
@@ -421,9 +444,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */,
+				96EE0EB42A97AD820054E4F1 /* CameraView.swift in Sources */,
+				96EE0EB22A97AD470054E4F1 /* CameraViewManager.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
 				D22D074E2A72AB85001578BA /* CameraModule.swift in Sources */,
+				96EE0EBC2A97AF580054E4F1 /* CameraError.swift in Sources */,
+				96EE0EB02A97AC680054E4F1 /* CameraViewManager.swift in Sources */,
 				D22D07522A72C115001578BA /* CameraModuleBridge.m in Sources */,
+				96EE0EBA2A97AEE90054E4F1 /* Promise.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
