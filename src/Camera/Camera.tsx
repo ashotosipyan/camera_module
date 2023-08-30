@@ -1,6 +1,6 @@
-import {PureComponent} from 'react';
+import {PureComponent, ReactNode} from 'react';
 import {CameraProps} from './CameraProps';
-import {NativeModules} from 'react-native';
+import {NativeModules, requireNativeComponent} from 'react-native';
 
 const CameraModule = NativeModules.CameraView;
 
@@ -54,4 +54,14 @@ export class Camera extends PureComponent<CameraProps> {
       throw new Error();
     }
   }
+
+  public render(): ReactNode {
+    return <NativeCameraView />;
+  }
 }
+
+const NativeCameraView = requireNativeComponent(
+  'CameraView',
+  // @ts-expect-error because the type declarations are kinda wrong, no?
+  Camera,
+);

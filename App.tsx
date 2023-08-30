@@ -1,6 +1,7 @@
 import React from 'react';
 import {Text, TouchableOpacity, View} from 'react-native';
 import {useCameraPermissions} from './src/Camera/hooks/useCameraPermissions.hook';
+import {Camera} from './src/Camera/Camera';
 
 function App() {
   const isAuthorized = useCameraPermissions();
@@ -20,6 +21,12 @@ function App() {
       </View>
     );
   }
+
+  return (
+    <View style={{flex: 1, backgroundColor: 'red'}}>
+      <Camera />
+    </View>
+  );
 }
 
 export default App;
