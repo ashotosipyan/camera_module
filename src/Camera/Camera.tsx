@@ -12,6 +12,11 @@ export type CameraPermissionStatus =
 export type CameraPermissionRequestResult = 'authorized' | 'denied';
 
 export class Camera extends PureComponent<CameraProps> {
+  /** @internal */
+  static displayName = 'Camera';
+  /** @internal */
+  displayName = Camera.displayName;
+
   constructor(props: CameraProps) {
     super(props);
   }
@@ -56,7 +61,7 @@ export class Camera extends PureComponent<CameraProps> {
   }
 
   public render(): ReactNode {
-    return <NativeCameraView />;
+    return <NativeCameraView {...this.props} />;
   }
 }
 

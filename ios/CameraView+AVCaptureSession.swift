@@ -29,7 +29,7 @@ extension CameraView {
     do {
       
       ReactLogger.log(level: .info, message: "Adding Video input...")
-      let videoDevice = AVCaptureDevice.default(.builtInWideAngleCamera,
+      let videoDevice = AVCaptureDevice.default(.builtInDualCamera,
                                                 for: .video, position: .unspecified)
       
       let videoDeviceInput = try AVCaptureDeviceInput(device: videoDevice!)

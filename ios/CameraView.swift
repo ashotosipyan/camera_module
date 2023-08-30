@@ -15,6 +15,8 @@ public final class CameraView: UIView {
   // Capture Session
   internal let captureSession = AVCaptureSession()
   
+  internal let cameraQueue = CameraQueues.cameraQueue
+  
   override public init(frame: CGRect) {
     super.init(frame: frame)
     
@@ -22,7 +24,9 @@ public final class CameraView: UIView {
     
     videoPreviewLayer.session = captureSession
     
-    // self.captureSession.startRunning()
+    cameraQueue.async {
+      self.captureSession.startRunning()
+    }
   }
   
   /// Convenience wrapper to get layer as its statically known type.

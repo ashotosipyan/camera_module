@@ -1,5 +1,3 @@
-import {ViewProps} from "react-native";
+import {ViewProps} from 'react-native';
 
-export interface CameraProps extends ViewProps {
-
-}
+export interface CameraProps extends ViewProps {}

@@ -17,6 +17,7 @@
 		96B7C8D52A9F22390073A4C0 /* AVAuthorizationStatus+descriptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B7C8D42A9F22390073A4C0 /* AVAuthorizationStatus+descriptor.swift */; };
 		96B7C8D82A9F415B0073A4C0 /* CameraView+AVCaptureSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B7C8D72A9F415B0073A4C0 /* CameraView+AVCaptureSession.swift */; };
 		96B7C8DA2A9F41F20073A4C0 /* ReactLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B7C8D92A9F41F20073A4C0 /* ReactLogger.swift */; };
+		96B7C8DC2A9F53F20073A4C0 /* CameraQueues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B7C8DB2A9F53F20073A4C0 /* CameraQueues.swift */; };
 		96EE0EB02A97AC680054E4F1 /* CameraViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EE0EAF2A97AC680054E4F1 /* CameraViewManager.swift */; };
 		96EE0EB22A97AD470054E4F1 /* CameraViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 96EE0EB12A97AD470054E4F1 /* CameraViewManager.m */; };
 		96EE0EB42A97AD820054E4F1 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EE0EB32A97AD820054E4F1 /* CameraView.swift */; };
@@ -56,6 +57,7 @@
 		96B7C8D42A9F22390073A4C0 /* AVAuthorizationStatus+descriptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AVAuthorizationStatus+descriptor.swift"; sourceTree = "<group>"; };
 		96B7C8D72A9F415B0073A4C0 /* CameraView+AVCaptureSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CameraView+AVCaptureSession.swift"; sourceTree = "<group>"; };
 		96B7C8D92A9F41F20073A4C0 /* ReactLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactLogger.swift; sourceTree = "<group>"; };
+		96B7C8DB2A9F53F20073A4C0 /* CameraQueues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraQueues.swift; sourceTree = "<group>"; };
 		96EE0EAF2A97AC680054E4F1 /* CameraViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewManager.swift; sourceTree = "<group>"; };
 		96EE0EB12A97AD470054E4F1 /* CameraViewManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CameraViewManager.m; sourceTree = "<group>"; };
 		96EE0EB32A97AD820054E4F1 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
@@ -137,6 +139,7 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				96B7C8DB2A9F53F20073A4C0 /* CameraQueues.swift */,
 				96B7C8D32A9F22220073A4C0 /* Parsers */,
 				96B7C8D72A9F415B0073A4C0 /* CameraView+AVCaptureSession.swift */,
 				96EE0EBB2A97AF580054E4F1 /* CameraError.swift */,
@@ -470,6 +473,7 @@
 				96B7C8DA2A9F41F20073A4C0 /* ReactLogger.swift in Sources */,
 				96EE0EB02A97AC680054E4F1 /* CameraViewManager.swift in Sources */,
 				D22D07522A72C115001578BA /* CameraModuleBridge.m in Sources */,
+				96B7C8DC2A9F53F20073A4C0 /* CameraQueues.swift in Sources */,
 				96EE0EBA2A97AEE90054E4F1 /* Promise.swift in Sources */,
 				96B7C8D52A9F22390073A4C0 /* AVAuthorizationStatus+descriptor.swift in Sources */,
 			);
