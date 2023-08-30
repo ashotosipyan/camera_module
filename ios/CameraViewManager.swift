@@ -23,7 +23,7 @@ final class CameraViewManager: RCTViewManager {
   final func getCameraPermissionStatus(_ resolve: @escaping RCTPromiseResolveBlock, reject: @escaping RCTPromiseRejectBlock) {
     withPromise(resolve: resolve, reject: reject) {
       let status = AVCaptureDevice.authorizationStatus(for: .video)
-      return status
+      return status.descriptor
     }
   }
   
