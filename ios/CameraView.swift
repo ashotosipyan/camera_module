@@ -17,12 +17,19 @@ public final class CameraView: UIView {
   
   internal let cameraQueue = CameraQueues.cameraQueue
   
+  var screenRect: CGRect! = nil // For view dimensions
+  
   override public init(frame: CGRect) {
     super.init(frame: frame)
     
     self.configureCaptureSession()
     
+    screenRect = UIScreen.main.bounds
+    
     videoPreviewLayer.session = captureSession
+    videoPreviewLayer.frame = CGRect(x: 0, y: 0, width: screenRect.size.width, height: screenRect.size.height)
+    videoPreviewLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill // Fill screen
+    videoPreviewLayer.connection?.videoOrientation = .portrait
     
     cameraQueue.async {
       self.captureSession.startRunning()
