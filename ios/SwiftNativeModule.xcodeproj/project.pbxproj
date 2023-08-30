@@ -23,8 +23,6 @@
 		96EE0EB42A97AD820054E4F1 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EE0EB32A97AD820054E4F1 /* CameraView.swift */; };
 		96EE0EBA2A97AEE90054E4F1 /* Promise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EE0EB92A97AEE90054E4F1 /* Promise.swift */; };
 		96EE0EBC2A97AF580054E4F1 /* CameraError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EE0EBB2A97AF580054E4F1 /* CameraError.swift */; };
-		D22D074E2A72AB85001578BA /* CameraModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22D074D2A72AB85001578BA /* CameraModule.swift */; };
-		D22D07522A72C115001578BA /* CameraModuleBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = D22D07512A72C115001578BA /* CameraModuleBridge.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,8 +62,6 @@
 		96EE0EB92A97AEE90054E4F1 /* Promise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Promise.swift; sourceTree = "<group>"; };
 		96EE0EBB2A97AF580054E4F1 /* CameraError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraError.swift; sourceTree = "<group>"; };
 		D22D074C2A72AB85001578BA /* SwiftNativeModule-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SwiftNativeModule-Bridging-Header.h"; sourceTree = "<group>"; };
-		D22D074D2A72AB85001578BA /* CameraModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraModule.swift; sourceTree = "<group>"; };
-		D22D07512A72C115001578BA /* CameraModuleBridge.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CameraModuleBridge.m; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -140,14 +136,12 @@
 			isa = PBXGroup;
 			children = (
 				96B7C8DB2A9F53F20073A4C0 /* CameraQueues.swift */,
-				96B7C8D32A9F22220073A4C0 /* Parsers */,
 				96B7C8D72A9F415B0073A4C0 /* CameraView+AVCaptureSession.swift */,
 				96EE0EBB2A97AF580054E4F1 /* CameraError.swift */,
 				96EE0EB32A97AD820054E4F1 /* CameraView.swift */,
 				96EE0EB12A97AD470054E4F1 /* CameraViewManager.m */,
 				96EE0EAF2A97AC680054E4F1 /* CameraViewManager.swift */,
-				D22D074D2A72AB85001578BA /* CameraModule.swift */,
-				D22D07512A72C115001578BA /* CameraModuleBridge.m */,
+				96B7C8D32A9F22220073A4C0 /* Parsers */,
 				96EE0EB82A97AED40054E4F1 /* React Utils */,
 				13B07FAE1A68108700A75B9A /* SwiftNativeModule */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
@@ -467,12 +461,10 @@
 				96EE0EB42A97AD820054E4F1 /* CameraView.swift in Sources */,
 				96EE0EB22A97AD470054E4F1 /* CameraViewManager.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
-				D22D074E2A72AB85001578BA /* CameraModule.swift in Sources */,
 				96EE0EBC2A97AF580054E4F1 /* CameraError.swift in Sources */,
 				96B7C8D82A9F415B0073A4C0 /* CameraView+AVCaptureSession.swift in Sources */,
 				96B7C8DA2A9F41F20073A4C0 /* ReactLogger.swift in Sources */,
 				96EE0EB02A97AC680054E4F1 /* CameraViewManager.swift in Sources */,
-				D22D07522A72C115001578BA /* CameraModuleBridge.m in Sources */,
 				96B7C8DC2A9F53F20073A4C0 /* CameraQueues.swift in Sources */,
 				96EE0EBA2A97AEE90054E4F1 /* Promise.swift in Sources */,
 				96B7C8D52A9F22390073A4C0 /* AVAuthorizationStatus+descriptor.swift in Sources */,

@@ -22,11 +22,7 @@ function App() {
     );
   }
 
-  return (
-    <View style={{flex: 1, backgroundColor: 'red'}}>
-      <Camera />
-    </View>
-  );
+  return <Camera style={{flex: 1}} />;
 }
 
 export default App;
