@@ -37,10 +37,10 @@ extension CameraView {
         ReactLogger.log(level: .error, message: "Unable to add device input")
         return
       }
-      print("Success!!")
+      
       captureSession.addInput(videoDeviceInput)
     } catch {
-      print("Failure")
+    
       ReactLogger.log(level: .error, message: "Invalid video device")
       return
     }
