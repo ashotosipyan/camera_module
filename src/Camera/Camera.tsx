@@ -60,7 +60,13 @@ export class Camera extends PureComponent<CameraProps> {
     }
   }
 
+  // Android function
+  public static testEvent() {
+    CameraModule.testEvent();
+  }
+
   public render(): ReactNode {
+    // eslint-disable-next-line react/react-in-jsx-scope
     return <NativeCameraView {...this.props} />;
   }
 }

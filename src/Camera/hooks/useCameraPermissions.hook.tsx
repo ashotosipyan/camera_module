@@ -1,5 +1,6 @@
 import {useEffect, useState} from 'react';
 import {Camera} from '../Camera';
+import {isAndroid} from '../../utils';
 
 export const useCameraPermissions = () => {
   const [isAuthorized, setIsAuthorized] = useState(false);
@@ -15,7 +16,7 @@ export const useCameraPermissions = () => {
       setIsAuthorized(authorized);
     };
 
-    getPermissions();
+    !isAndroid() && getPermissions();
   }, []);
 
   return isAuthorized;

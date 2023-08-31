@@ -2,11 +2,12 @@ import React from 'react';
 import {Text, TouchableOpacity, View} from 'react-native';
 import {useCameraPermissions} from './src/Camera/hooks/useCameraPermissions.hook';
 import {Camera} from './src/Camera/Camera';
+import {isAndroid} from './src/utils';
 
 function App() {
   const isAuthorized = useCameraPermissions();
 
-  if (!isAuthorized) {
+  if (!isAuthorized && !isAndroid()) {
     return (
       <View
         style={{
@@ -22,7 +23,17 @@ function App() {
     );
   }
 
-  return <Camera style={{flex: 1}} />;
+  return isAndroid() ? (
+    <View>
+      <TouchableOpacity
+        onPress={() => Camera.testEvent()}
+        style={{padding: 20, backgroundColor: 'yellow'}}>
+        <Text style={{color: 'black'}}>Press android</Text>
+      </TouchableOpacity>
+    </View>
+  ) : (
+    <Camera style={{flex: 1}} />
+  );
 }
 
 export default App;
