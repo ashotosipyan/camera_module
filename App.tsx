@@ -26,9 +26,14 @@ function App() {
   return isAndroid() ? (
     <View>
       <TouchableOpacity
-        onPress={() => Camera.testEvent()}
+        onPress={() => Camera.getPermission()}
         style={{padding: 20, backgroundColor: 'yellow'}}>
-        <Text style={{color: 'black'}}>Press android</Text>
+        <Text style={{color: 'black'}}>Check status</Text>
+      </TouchableOpacity>
+      <TouchableOpacity
+        onPress={() => Camera.requestPermission()}
+        style={{padding: 20, backgroundColor: 'yellow'}}>
+        <Text style={{color: 'black'}}>Request status</Text>
       </TouchableOpacity>
     </View>
   ) : (

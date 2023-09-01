@@ -65,6 +65,14 @@ export class Camera extends PureComponent<CameraProps> {
     CameraModule.testEvent();
   }
 
+  public static getPermission() {
+    CameraModule.getCameraPermissionStatus();
+  }
+
+  public static requestPermission() {
+    CameraModule.requestCameraPermission();
+  }
+
   public render(): ReactNode {
     // eslint-disable-next-line react/react-in-jsx-scope
     return <NativeCameraView {...this.props} />;
