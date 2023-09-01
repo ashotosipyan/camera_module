@@ -16,7 +16,7 @@ export const useCameraPermissions = () => {
       setIsAuthorized(authorized);
     };
 
-    !isAndroid() && getPermissions();
+    getPermissions();
   }, []);
 
   return isAuthorized;

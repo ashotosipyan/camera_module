@@ -1,18 +1,15 @@
 package com.swiftnativemodule
 
-import android.view.View
 import com.facebook.react.ReactPackage
 import com.facebook.react.bridge.NativeModule
 import com.facebook.react.bridge.ReactApplicationContext
-import com.facebook.react.uimanager.ReactShadowNode
-import com.facebook.react.uimanager.ViewManager
 
 class CameraPackage : ReactPackage {
     override fun createViewManagers(
-            reactContext: ReactApplicationContext
-    ): MutableList<ViewManager<View, ReactShadowNode<*>>> = mutableListOf()
+        reactContext: ReactApplicationContext
+    ) = listOf(CameraViewManager(reactContext))
 
     override fun createNativeModules(
-            reactContext: ReactApplicationContext
-    ): MutableList<NativeModule> = listOf(CameraModule(reactContext)).toMutableList()
+        reactContext: ReactApplicationContext
+    ): MutableList<NativeModule> = listOf(CameraViewModule(reactContext)).toMutableList()
 }
