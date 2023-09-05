@@ -1,28 +1,42 @@
-import React from 'react';
-import {Text, TouchableOpacity, View} from 'react-native';
-import {useCameraPermissions} from './src/Camera/hooks/useCameraPermissions.hook';
-import {Camera} from './src/Camera/Camera';
+import React, {useEffect, useRef} from 'react';
+import {
+  findNodeHandle,
+  PixelRatio,
+  requireNativeComponent,
+  UIManager,
+} from 'react-native';
+
+export const CameraView = requireNativeComponent('CameraView');
+
+const createFragment = viewId => {
+  console.log('-> viewId', viewId);
+  UIManager.dispatchViewManagerCommand(
+    viewId,
+    // we are calling the 'create' command
+    UIManager.getViewManagerConfig(
+      'CameraViewManager',
+    ).Commands.create.toString(),
+    [viewId],
+  );
+};
 
 function App() {
-  const isAuthorized = useCameraPermissions();
+  const ref = useRef(null);
 
-  if (!isAuthorized) {
-    return (
-      <View
-        style={{
-          flex: 1,
-          justifyContent: 'center',
-          alignItems: 'center',
-          backgroundColor: 'white',
-        }}>
-        <TouchableOpacity hitSlop={20} onPress={() => {}}>
-          <Text>Take Photo</Text>
-        </TouchableOpacity>
-      </View>
-    );
-  }
+  useEffect(() => {
+    const viewId = findNodeHandle(ref.current);
+    createFragment(viewId);
+  }, []);
 
-  return <Camera style={{flex: 1}} />;
+  return (
+    <CameraView
+      style={{
+        flex: 1,
+        backgroundColor: 'red',
+      }}
+      ref={ref}
+    />
+  );
 }
 
 export default App;
